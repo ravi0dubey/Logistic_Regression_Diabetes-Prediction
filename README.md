@@ -1,4 +1,4 @@
-# ravi0dubey-Logistic_Regression_Diabetes-Prediction
+Logistic_Regression_Diabetes-Prediction
 
 Application Flow
 Logistic Regression is one of the most fundamental algorithms for classification in the Machine Learning world.
@@ -111,320 +111,23 @@ There is no sophisticted, closed-form solution like least-squares linear, so we 
 Luckily, our "cross-entropy" error measure is convex so there is only one minimum. Thus the minimum we arrive at is the global minimum.
 
 To learn we're going to minimize the following error measure using batch gradient descent.
+![image](https://user-images.githubusercontent.com/38419795/216737031-22e7a466-0c1b-477d-a5f8-0ecf8e70fa29.png)
 
-e
-(
-h
-(
-x
-n
-)
-,
-y
-n
-)
-=
-ln
-(
-1
-+
-e
-−
-y
-n
-w
-T
-x
-n
-)
-E
-in
-(
-w
-)
-=
-1
-N
-N
-∑
-n
-=
-1
- 
-e
-(
-h
-(
-x
-n
-)
-,
-y
-n
-)
-=
-1
-N
-N
-∑
-n
-=
-1
- 
-ln
-(
-1
-+
-e
-−
-y
-n
-w
-T
-x
-n
-)
+
 We'll need the derivative of the point loss function and possibly some abuse of notation.
+![image](https://user-images.githubusercontent.com/38419795/216737064-115ec690-3544-493c-9846-c36d1c0f7d70.png)
 
-d
-d
-w
-e
-(
-h
-(
-x
-n
-)
-,
-y
-n
-)
-=
-−
-y
-n
-x
-n
-e
-−
-y
-n
-w
-T
-x
-n
-1
-+
-e
-−
-y
-n
-w
-T
-x
-n
-=
-−
-y
-n
-x
-n
-1
-+
-e
-y
-n
-w
-T
-x
-n
 With the point loss derivative we can determine the gradient of the in-sample error:
+![image](https://user-images.githubusercontent.com/38419795/216737087-635d38a9-5e7e-4093-afc2-799cecd151c1.png)
 
-∇
-E
-in
-(
-w
-)
-=
-d
-d
-w
-[
-1
-N
-N
-∑
-n
-=
-1
- 
-e
-(
-h
-(
-x
-n
-)
-,
-y
-n
-)
-]
-=
-1
-N
-N
-∑
-n
-=
-1
- 
-d
-d
-w
-e
-(
-h
-(
-x
-n
-)
-,
-y
-n
-)
-=
-1
-N
-N
-∑
-n
-=
-1
- 
-(
-−
-y
-n
-x
-n
-1
-+
-e
-y
-n
-w
-T
-x
-n
-)
-=
-−
-1
-N
-N
-∑
-n
-=
-1
- 
-y
-n
-x
-n
-1
-+
-e
-y
-n
-w
-T
-x
-n
 Our weight update rule per batch gradient descent becomes
+![image](https://user-images.githubusercontent.com/38419795/216737129-9d78975f-f071-4c67-8e58-47d6a2e6addb.png)
 
-w
-i
-+
-1
-=
-w
-i
-−
-η
-∇
-E
-in
-(
-w
-i
-)
-=
-w
-i
-−
-η
-(
-−
-1
-N
-N
-∑
-n
-=
-1
- 
-y
-n
-x
-n
-1
-+
-e
-y
-n
-w
-T
-i
-x
-n
-)
-=
-w
-i
-+
-η
-(
-1
-N
-N
-∑
-n
-=
-1
- 
-y
-n
-x
-n
-1
-+
-e
-y
-n
-w
-T
-i
-x
-n
-)
-where 
-η
- is the learning rate.
 
-Evaluation of a Classification Model
+where η is the learning rate.
+
+**Evaluation of a Classification Model**
+
 In machine learning, once we have a result of the classification problem, how do we measure how accurate our classification is? For a regression problem, we have different metrics like R Squared score, Mean Squared Error etc. what are the metrics to measure the credibility of a classification model?
 
 Metrics In a regression problem, the accuracy is generally measured in terms of the difference in the actual values and the predicted values. In a classification problem, the credibility of the model is measured using the confusion matrix generated, i.e., how accurately the true positives and true negatives were predicted. The different metrics used for this purpose are:
@@ -436,49 +139,17 @@ F1 Score
 Specifity
 AUC( Area Under the Curve)
 RUC(Receiver Operator Characteristic)
-Confusion Matrix
+
+**Confusion Matrix**
 A typical confusion matrix looks like the figure shown.
 
+![image](https://user-images.githubusercontent.com/38419795/216737195-7b775a21-6fbe-4388-b804-c2c31d31b856.png)
 
-Where the terms have the meaning:
 
- True Positive(TP): A result that was predicted as positive by the classification model and also is positive
 
- True Negative(TN): A result that was predicted as negative by the classification model and also is negative
 
- False Positive(FP): A result that was predicted as positive by the classification model but actually is negative
+**Recall or Sensitivity**
 
- False Negative(FN): A result that was predicted as negative by the classification model but actually is positive.
-
-The Credibility of the model is based on how many correct predictions did the model do.
-
-Accuracy
-The mathematical formula is :
-
-Accuracy= 
-(
-T
-P
-+
-T
-N
-)
-(
-T
-P
-+
-T
-N
-+
-F
-P
-+
-F
-N
-)
-Or, it can be said that it’s defined as the total number of correct classifications divided by the total number of classifications.
-
-Recall or Sensitivity
 The mathematical formula is:
 
 Recall= 
