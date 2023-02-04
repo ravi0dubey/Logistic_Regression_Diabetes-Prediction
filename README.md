@@ -654,4 +654,10 @@ AUC(Area Under Curve)
 
 It helps us to choose the best model amongst the models for which we have plotted the ROC curves
 The best model is the one which encompasses the maximum area under it.
+In the adjacent diagram, amongst the two curves, the model that resulted in the red one should be chosen as it clearly covers more area than the blue one.
+
+AUC(Area Under Curve)
+
+It helps us to choose the best model amongst the models for which we have plotted the ROC curves
+The best model is the one which encompasses the maximum area under it.
 In the adjacent diagram, amongst the two curves, the model that resulted in the red one should be chosen as it clearly covers more area than the blue one
