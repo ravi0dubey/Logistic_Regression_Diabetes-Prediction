@@ -1,4 +1,4 @@
-Logistic_Regression_Diabetes-Prediction
+# Logistic_Regression_Diabetes-Prediction
 
 Application Flow
 Logistic Regression is one of the most fundamental algorithms for classification in the Machine Learning world.
