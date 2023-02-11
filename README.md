@@ -293,7 +293,7 @@ N
 F
 P
 )
-ROC(Receiver Operator Characteristic)
+**ROC(Receiver Operator Characteristic)**
 We know that the classification algorithms work on the concept of probability of occurrence of the possible outcomes. A probability value lies between 0 and 1. Zero means that there is no probability of occurrence and one means that the occurrence is certain.
 
 But while working with real-time data, it has been observed that we seldom get a perfect 0 or 1 value. Instead of that, we get different decimal values lying between 0 and 1. Now the question is if we are not getting binary probability values how are we actually determining the class in our classification problem?
@@ -321,14 +321,22 @@ The ROC curve answers our question of which threshold to choose.
 But we have a confusion!!
 Let’s suppose that we used different classification algorithms, and different ROCs for the corresponding algorithms have been plotted. The question is: which algorithm to choose now? The answer is to calculate the area under each ROC curve.
 
-AUC(Area Under Curve)
+**AUC(Area Under Curve)**
 
 It helps us to choose the best model amongst the models for which we have plotted the ROC curves
 The best model is the one which encompasses the maximum area under it.
 In the adjacent diagram, amongst the two curves, the model that resulted in the red one should be chosen as it clearly covers more area than the blue one.
 
-AUC(Area Under Curve)
+**AUC(Area Under Curve)**
 
 It helps us to choose the best model amongst the models for which we have plotted the ROC curves
 The best model is the one which encompasses the maximum area under it.
-In the adjacent diagram, amongst the two curves, the model that resulted in the red one should be chosen as it clearly covers more area than the blue one
+In the adjacent diagram, amongst the two curves, the model that resulted in the red one should be chosen as it clearly covers more area than the blue one.
+
+**Dataset Distribution**
+![image](https://user-images.githubusercontent.com/38419795/218280909-35e038be-31b0-4a0c-bc11-234e38178e1f.png)
+![image](https://user-images.githubusercontent.com/38419795/218280925-7994ef6a-16bd-455a-860a-d77c41950c22.png)
+![image](https://user-images.githubusercontent.com/38419795/218280939-f4a5fd4e-8f73-4ae5-8702-788df8b8ab14.png)
+
+
+
